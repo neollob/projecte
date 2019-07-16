@@ -1,0 +1,13 @@
+<h4  *ngIf="invoices">Orders</h4>
+<div *ngIf="invoices" id='container'>
+    <div id="invoicesItems" >
+        <div *ngFor="let invoice of invoices" fxLayout  fxLayout="column">
+          <h5 fxLayout fxFlexAlign="left">Nº {{invoice.invid}} </h5>
+          <p>{{invoice.description}} </p>
+          <div *ngFor="let item of invoice.items" fxLayout  fxLayout="row">
+              <h5 fxLayout fxFlexAlign="left">Nº {{item.key}}    </h5>
+              {{item.value}}
+          </div>
+          </div>
+        </div>
+</div>

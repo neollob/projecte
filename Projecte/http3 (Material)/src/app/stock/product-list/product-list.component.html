@@ -1,0 +1,43 @@
+<div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutAlign.xs="stretch stretch" fxLayoutGap.xs="0.2rem">
+  <mat-card class='productList'>
+    <h2>Stock</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="dataSource"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of products" cdkDrag>
+       <mat-card>
+         {{ item.name }}
+         <mat-card-subtitle>Quantity: {{item.qty}}</mat-card-subtitle>
+
+        </mat-card>
+
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class='productList'>
+    <h2>Order</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="order"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div  class="example-box" *ngFor="let item of order"  cdkDrag>
+         <mat-card *ngIf="item.qty>-1" fxFlex fxLayoutGap="1rem">
+           <span fxFlex fxFlexAlign="center">{{ item.name }}</span>
+           <mat-form-field class="example-full-width" fxFlex="4rem" fxFlexAlign="center">
+              <input type="number" matInput placeholder="Quantity" value="{{item.qty}}">
+            </mat-form-field>
+           <button mat-button fxFlex="3rem" fxFlexAlign="center">+</button>
+          </mat-card>
+        </div>
+      </div>
+  </mat-card>
+</div>
+{{order|json}}

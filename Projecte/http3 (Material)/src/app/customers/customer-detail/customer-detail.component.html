@@ -1,0 +1,30 @@
+<mat-card fxLayout fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem" fxLayoutGap.xs="0">
+  <mat-card-title fxLayout="column" fxFlexAlign="center">
+    <img fxFlexAlign="center" id="picture" src="{{ customer.picture }}" alt="" />
+    <h3>{{ customer.name.first }} {{ customer.name.last }}</h3>
+  </mat-card-title>
+  <mat-card-content fxFlexAlign="center">
+    <p>
+      <mat-icon aria-hidden="false" aria-label="Address">home</mat-icon><span> {{ customer.address }}</span>
+    </p>
+    <p>
+      <mat-icon aria-hidden="false" aria-label="e-Mail">email</mat-icon><span> {{ customer.email }}</span>
+    </p>
+    <p>
+      <mat-icon aria-hidden="false" aria-label="Phone">phone</mat-icon><span> {{ customer.phone }}</span>
+    </p>
+    <p>
+      <mat-icon aria-hidden="false" aria-label="About">about</mat-icon><span> {{ customer.about }}</span>
+    </p>
+    <app-add-order></app-add-order>
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.xs="column" fxLayoutGap.xs="0">
+    <button mat-stroked-button color="primary" [routerLink]="['/customers']">
+      All customers
+    </button>
+    <button mat-stroked-button color="primary" [routerLink]="['../../edit-customer/', customer.id]">
+      Edit
+    </button>
+
+  </mat-card-actions>
+</mat-card>

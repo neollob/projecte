@@ -1,0 +1,23 @@
+.full-width {
+  width: 100%;
+}
+table {
+  width: 100%;
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .mat-header-cell{
+    font-size:inherit;  }
+  .mat-cell, .mat-footer-cell{
+    font-size:18px;
+  }
+  #picture{
+    border-radius: 50%;
+    height: 72px;
+  }
+  a{text-decoration: none;}
+}
+
+#addNew{
+  margin:0.5rem;
+}

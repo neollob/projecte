@@ -1,0 +1,11 @@
+[
+  '{{repeat(145, 7)}}',
+  {
+    id: '{{objectId()}}',
+    name: '{{lorem(integer(1,4), "words")}}',
+    value: '{{floating(10, 400, 2, "$0,0.00")}}',
+   	qty: '{{integer(0, 150)}}'
+    } 
+]   
+    
+

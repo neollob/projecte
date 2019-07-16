@@ -1,0 +1,60 @@
+
+<div fxLayout="row">
+    <h4><a routerLink="/home">Home</a></h4>
+    <h4>&nbsp; > &nbsp;</h4>
+    <h4><a routerLink="/stock">Stock</a></h4>
+    <h4>&nbsp; > &nbsp;</h4>
+    <h4>ordering</h4>
+</div>
+<div>
+<mat-form-field class="add-form-field half-width">
+  <input matInput type="text" placeholder="Filter Product" [(ngModel)]="pattern">
+  <button mat-button *ngIf="pattern" matSuffix mat-icon-button aria-label="Clear"
+    (click)="pattern=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutAlign.xs="stretch stretch" fxLayoutGap.xs="0.2rem">
+  <mat-card class='productList'>
+    <h2>Stock</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="dataSource"
+      class="stock-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of products | productsPipe:'name':pattern; let i = index" cdkDrag>
+       <mat-card>
+         {{ item.name }}
+         <mat-card-subtitle>Quantity: {{item.qty}}</mat-card-subtitle>
+
+        </mat-card>
+
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class='productList'>
+    <h2>Order</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="order"
+        class="stock-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div  class="example-box" *ngFor="let item of order"  cdkDrag>
+         <mat-card *ngIf="item.qty>-1" fxFlex fxLayoutGap="1rem">
+           <span fxFlex fxFlexAlign="center">{{ item.name }}</span>
+           <button mat-stroked-button fxFlex="3rem" fxFlexAlign="center" (click)="subtractQty(item)">-</button>
+           <mat-form-field class="qtyInput" fxFlex="4rem" fxFlexAlign="center">
+              <input matInput placeholder="Quantity" [(ngModel)]="item.qty">
+            </mat-form-field>
+           <button mat-stroked-button fxFlex="3rem" fxFlexAlign="center" (click)="addQty(item)">+</button>
+          </mat-card>
+        </div>
+      </div>
+  </mat-card>
+</div>
+</div>{{order|json}}

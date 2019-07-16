@@ -1,0 +1,26 @@
+mat-card-header,mat-toolbar{
+  background-color: #83b9ff;
+  color:#ffffff;
+}
+  #container{
+    max-height: 20rem;
+    overflow: scroll;
+  }
+  #invoicesItems{
+    margin:0 1rem;
+    &>div>div{
+      margin:0 2rem;
+    }
+  }
+  #orderItems{
+    margin-left: 1rem;
+    padding-left: 1rem;
+    .orderItems{
+      line-height: 0;
+    }
+  }
+@media(min-width: 959px){
+  #description{
+    padding-left: 1rem;
+  }
+}

@@ -1,0 +1,26 @@
+<mat-card fxLayout fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1rem" fxLayoutGap.xs="0">
+  <mat-toolbar>
+    <h3 *ngIf="invoices">Orders</h3>
+
+  </mat-toolbar>
+  <div *ngIf="invoices" id='container'>
+    <div id="invoicesItems" fxLayout fxLayout="column" fxLayoutGap="15px">
+      <mat-card *ngFor="let invoice of invoices" fxLayout fxLayout="column" fxLayoutGap="10px">
+        <mat-card-title>
+          <small fxFlexAlign="left">Order Nº {{invoice.invid}} </small>
+        </mat-card-title>
+        <section>
+          <label for="description"><h4>Description</h4> </label>
+          <p id="description">{{invoice.description}} </p>
+        </section>
+        <section id="orderItems">
+        <div class="orderItems" *ngFor="let item of invoice.items" fxLayout="row" fxLayoutGap="1rem">
+          <h5 fxFlexAlign="center">Nº {{item.key}} </h5>
+          <div fxFlexAlign="center"> {{item.value}}</div>
+        </div>
+      </section>
+      </mat-card>
+    </div>
+  </div>
+
+</mat-card>

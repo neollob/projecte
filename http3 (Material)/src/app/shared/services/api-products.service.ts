@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from '../classes/stock.model';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiProductsService {
 
+  private apiURL = `${environment.API_URL}products`;
   constructor(private http: HttpClient) { }
 
   initProduct() {
@@ -28,15 +30,15 @@ export class ApiProductsService {
     return unique;
   }
   getProducts$() {
-    const users = this.http.get<Product>('http://localhost:3000/products');
+    const users = this.http.get<Product>(this.apiURL);
     return users;
   }
   getProduct$(id: string) {
-    const user = this.http.get<Product>(`http://localhost:3000/products/${id}`);
+    const user = this.http.get<Product>(`${this.apiURL}/${id}`);
     return user;
   }
   addProduct$(product: Product) {
-    return this.http.post<Product>('http://localhost:3000/products', product)
+    return this.http.post<Product>(this.apiURL, product)
       .pipe(tap(( product: Product) => console.log(`added Product: id=${product}`)),
         catchError(err => {
           console.log(err);
@@ -44,10 +46,10 @@ export class ApiProductsService {
         }));
   }
   deleteProduct$(id: string) {
-    return this.http.delete(`http://localhost:3000/products/${id}`);
+    return this.http.delete(`${this.apiURL}/${id}`);
   }
   editProduct$(product: Product) {
-    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`, product)
+    return this.http.put<Product>(`${this.apiURL}/${product.id}`, product)
       .pipe(tap((product: Product) => console.log(`edited Product: id=${product.id}`)),
         catchError(err => {
           console.log(err);

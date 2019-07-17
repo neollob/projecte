@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.log(this.loginForm.value);
 
-    return this.authService
-      .loginuser(this.email.value, this.password.value)
+    return this.authService.loginUser$(this.email.value, this.password.value)
       .subscribe(
         data => {
           /*           this.authService.setUser(data.user); */

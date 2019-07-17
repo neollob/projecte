@@ -21,6 +21,9 @@ mat-toolbar{
   #secondBar{
     background-color: #6495ed;
     height: 40px;
+    span{
+      font-size:medium;
+    }
   }
   .iconBar{margin-right: 0.5rem;}
 }

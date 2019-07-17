@@ -3,9 +3,12 @@
   min-height: 3rem;
   min-width: 45vw;
 }
-.productList{
-  max-height: 70vh;
-  overflow-y: scroll;
+.stockList{
+  width: 90vw;
+  .productList{
+    max-height: 60vh;
+    overflow-y: scroll;
+  }
 }
 .half-width{
   min-width: 200px;

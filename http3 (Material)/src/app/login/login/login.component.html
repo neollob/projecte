@@ -2,24 +2,39 @@
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-card>
-      <mat-card-header>
+      <mat-card-header fxLayout fxLayoutAlign="center">
         <mat-card-title>Login Page</mat-card-title>
       </mat-card-header>
       <mat-card-content fxLayout="column">
         <mat-form-field>
           <input matInput placeholder="Email" [formControl]="loginForm.get('email')">
         </mat-form-field>
+        <mat-error *ngIf="(email.invalid)&&(email.dirty || email.touched)">
+          Mail incorrecto
+        </mat-error>
+
         <mat-form-field>
           <input type="password" matInput placeholder="password" [formControl]="loginForm.get('password')">
         </mat-form-field>
+        <mat-error *ngIf="(password.invalid)&&(password.dirty || password.touched)">
+          Password no es valido
+        </mat-error>
+
+        <mat-card-actions fxLayoutAlign="stretch">
+          <button type="submit" mat-raised-button color="primary">Login</button>
+        </mat-card-actions>
+        <mat-error *ngIf="(email.invalid || password.invalid)&&(email.dirty || email.touched)">
+          Los campos no pueden estar vacíos
+        </mat-error>
       </mat-card-content>
-      <mat-error *ngIf="(email.invalid || password.invalid)&&(email.dirty || email.touched)">
-        Los campos no pueden estar vacíos
-      </mat-error>
-      <mat-card-actions fxLayoutAlign="end">
-        <button type="submit" mat-raised-button color="primary">Login</button>
-      </mat-card-actions>
+
+      <mat-label fxLayout="row" fxLayoutAlign="center"> not registered?
+          <a routerLink="/users/register"> Create an account</a>
+      </mat-label>
+
+      <div>
+      </div>
     </mat-card>
   </form>
-
 </div>
+

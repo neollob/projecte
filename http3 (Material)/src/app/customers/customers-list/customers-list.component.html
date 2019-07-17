@@ -45,7 +45,7 @@
     </ng-container>
     <!-- edit Column -->
     <ng-container matColumnDef="edit">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      <th mat-header-cell *matHeaderCellDef>
         <mat-icon>edit</mat-icon>
       </th>
       <td mat-cell *matCellDef="let user"> <a mat-icon-fab color="primary" [routerLink]="['edit-customer/',user.id]"
@@ -56,10 +56,10 @@
 
     <!-- delete Column -->
     <ng-container matColumnDef="delete">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      <th mat-header-cell *matHeaderCellDef>
         <mat-icon>delete</mat-icon>
       </th>
-      <td mat-cell *matCellDef="let user"> <a mat-icon-fabtitle="Delete customer"
+      <td mat-cell *matCellDef="let user"> <a mat-icon title="Delete customer" color="warn"
           (click)='deleteCustomer(user.id)' [routerLink]="">
           <mat-icon>delete</mat-icon>
         </a> </td>

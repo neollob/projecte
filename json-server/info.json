@@ -7680,7 +7680,7 @@
       "greeting": ""
     }
   ],
-  "products":[
+  "products": [
     {
       "id": "5d2d23b6233ceb1ee06b975e",
       "name": "non ea qui cillum",
@@ -7793,6 +7793,12 @@
       "email": "my3@mail.com",
       "password": "$2a$10$wZ9WSDnksqSYZppYFGhSqOlo.EpEyTnldAu/uMo3Y0vpenc8r1F5m",
       "id": 3
+    },
+    {
+      "email": "da@mail",
+      "password": "$2a$10$ivypYkKdonvWPcPhxiWJUuEH5AfMGTTAvggpNrr2lLgzz2Xbr6bGm",
+      "name": "",
+      "id": 4
     }
   ]
 }

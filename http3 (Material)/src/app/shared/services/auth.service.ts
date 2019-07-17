@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError, BehaviorSubject, Observable } from 'rxjs';
 import { UserInterface } from '../interfaces/user-interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,25 @@ export class AuthService {
     'Content-type': 'application/json'
   });
   public dataToken: any;
+  private apiURL = `${environment.API_URL}`;
   constructor(private http: HttpClient) { }
   registerUser$(name: string, email: string, password: string) {
-    this.http.post('http://localhost:3000/users', { name, email, password }, { headers: this.headers }).pipe(map => this.dataToken = map);
+    console.log('auth');
+    const url_api = `${this.apiURL}register`;
+    return this.http
+      .post<UserInterface>(
+        url_api,
+        { name, email, password },
+        { headers: this.headers }
+      )
+      .pipe(tap(data => data),
+        catchError(error => {
+          console.log(error);
+          return throwError(error);
+        }));
   }
-  loginuser(email: string, password: string): Observable<any> {
-    const url_api = 'http://localhost:3000/login';
+  loginUser$(email: string, password: string): Observable<any> {
+    const url_api = `${this.apiURL}login`;
     return this.http
       .post<UserInterface>(
         url_api,

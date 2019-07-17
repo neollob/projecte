@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Customer } from '../classes/customer.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
+  private apiURL = `${environment.API_URL}customers`;
   constructor(private http: HttpClient) { }
 
   initCustomer() {
@@ -58,26 +60,26 @@ export class ApiService {
     return unique;
   }
   getCustomers$() {
-    const users = this.http.get<Customer>('http://localhost:3000/customers');
+    const users = this.http.get<Customer>(this.apiURL);
     return users;
   }
   getCustomer$(id: string) {
-    const user = this.http.get<Customer>(`http://localhost:3000/customers/${id}`);
+    const user = this.http.get<Customer>(`${this.apiURL}/${id}`);
     return user;
   }
   addCustomer$(customer: Customer) {
-    return this.http.post<Customer>('http://localhost:3000/customers', customer)
-      .pipe(tap(( customer: Customer) => console.log(`added Customer: id=${customer}`)),
+    return this.http.post<Customer>(this.apiURL, customer)
+      .pipe(tap((customer: Customer) => console.log(`added Customer: id=${customer}`)),
         catchError(err => {
           console.log(err);
           return throwError(err);
         }));
   }
   deleteCustomer$(id: string) {
-    return this.http.delete(`http://localhost:3000/customers/${id}`);
+    return this.http.delete(`${this.apiURL}/${id}`);
   }
   editCustomer$(customer: Customer) {
-    return this.http.put<Customer>(`http://localhost:3000/customers/${customer.id}`, customer)
+    return this.http.put<Customer>(`${this.apiURL}/${customer.id}`, customer)
       .pipe(tap((customer: Customer) => console.log(`edited Customers: id=${customer.id}`)),
         catchError(err => {
           console.log(err);

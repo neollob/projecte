@@ -1,12 +1,15 @@
-form{
+form {
   min-width: 300px;
 }
-.login-main{
-
+.login-main {
   margin-top: 10%;
-
-  }
-
-  mat-error{
-    font-size: small;
 }
+mat-error,mat-label {
+  font-size: small;
+}
+mat-label{
+  >a{margin-left: 5px;
+    color: green;
+  }
+}
+button{width: 100%;}

@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Supplier } from '../classes/supplier.model';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiSuppliersService {
 
+  private apiURL = `${environment.API_URL}suppliers`;
   constructor( private http: HttpClient ) { }
   initSupplier() {
     const supplier: Supplier = {
@@ -44,15 +46,15 @@ export class ApiSuppliersService {
     return unique;
   }
   getSuppliers$() {
-    const suppliers = this.http.get<Supplier>('http://localhost:3000/suppliers');
+    const suppliers = this.http.get<Supplier>(this.apiURL);
     return suppliers;
   }
   getSupplier$(id: string) {
-    const supplier = this.http.get<Supplier>(`http://localhost:3000/suppliers/${id}`);
+    const supplier = this.http.get<Supplier>(`${this.apiURL}/${id}`);
     return supplier;
   }
   addSupplier$(supplier: Supplier) {
-    return this.http.post<Supplier>('http://localhost:3000/suppliers', supplier)
+    return this.http.post<Supplier>(this.apiURL, supplier)
       .pipe(tap(( supplier: Supplier) => console.log(`added Supplier: id=${supplier}`)),
         catchError(err => {
           console.log(err);
@@ -60,10 +62,10 @@ export class ApiSuppliersService {
         }));
   }
   deleteSupplier$(id: number) {
-    return this.http.delete(`http://localhost:3000/suppliers/${id}`);
+    return this.http.delete(`${this.apiURL}/${id}`);
   }
   editSupplier$(supplier: Supplier) {
-    return this.http.put<Supplier>(`http://localhost:3000/suppliers/${supplier.id}`, supplier)
+    return this.http.put<Supplier>(`${this.apiURL}/${supplier.id}`, supplier)
       .pipe(tap((supplier: Supplier) => console.log(`edited Suppliers: id=${supplier.id}`)),
         catchError(err => {
           console.log(err);

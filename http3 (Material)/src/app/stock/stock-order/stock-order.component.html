@@ -7,15 +7,15 @@
     <h4>ordering</h4>
 </div>
 <div>
-<mat-form-field class="add-form-field half-width">
-  <input matInput type="text" placeholder="Filter Product" [(ngModel)]="pattern">
-  <button mat-button *ngIf="pattern" matSuffix mat-icon-button aria-label="Clear"
-    (click)="pattern=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-<div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutAlign.xs="stretch stretch" fxLayoutGap.xs="0.2rem">
-  <mat-card class='productList'>
+<div cdkDropListGroup fxLayout="row" fxLayoutAlign="space-between start" fxLayout.xs="column" fxLayoutGap="0.5rem" fxLayoutAlign.xs="stretch stretch" fxLayoutGap.xs="0.2rem">
+  <mat-card class="stockList">
+    <mat-form-field class="add-form-field half-width">
+      <input matInput type="text" placeholder="Filter Product" [(ngModel)]="pattern">
+      <button mat-button *ngIf="pattern" matSuffix mat-icon-button aria-label="Clear"
+        (click)="pattern=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
     <h2>Stock</h2>
 
     <div
@@ -23,7 +23,7 @@
       [cdkDropListData]="dataSource"
       class="stock-list"
       (cdkDropListDropped)="drop($event)"
-    >
+      class='productList'>
       <div class="example-box" *ngFor="let item of products | productsPipe:'name':pattern; let i = index" cdkDrag>
        <mat-card>
          {{ item.name }}
@@ -35,7 +35,8 @@
     </div>
   </mat-card>
 
-  <mat-card class='productList'>
+  <mat-card class="stockList">
+    <h4 *ngIf='order.length-1>0'>Total products: {{order.length-1}}</h4>
     <h2>Order</h2>
 
       <div
@@ -43,7 +44,7 @@
         [cdkDropListData]="order"
         class="stock-list"
         (cdkDropListDropped)="drop($event)"
-      >
+        class='productList'>
         <div  class="example-box" *ngFor="let item of order"  cdkDrag>
          <mat-card *ngIf="item.qty>-1" fxFlex fxLayoutGap="1rem">
            <span fxFlex fxFlexAlign="center">{{ item.name }}</span>
@@ -57,4 +58,5 @@
       </div>
   </mat-card>
 </div>
-</div>{{order|json}}
+</div>
+{{order|json}}

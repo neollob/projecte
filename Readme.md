@@ -12,7 +12,7 @@ El objetivo de la aplicación es la de poder gestionar vía web pormenores de un
 
 ### Wireframe
 
-[![Wireframe](https://https://neollob.github.io/projecte/img/wireframe.jpg)](https://https://neollob.github.io/projecte/img/wireframe.jpg)
+[![Wireframe](https://github.com/neollob/projecte/blob/master/img/wireframe.jpg)](https://github.com/neollob/projecte/blob/master/img/wireframe.jpg)
 
 ### Primera iteración
 
@@ -22,11 +22,11 @@ El objetivo de la aplicación es la de poder gestionar vía web pormenores de un
 
 * Pagina principal
 
-[![Home](https://https://neollob.github.io/projecte/img/screenshot1.png)](https://https://neollob.github.io/projecte/img/screenshot1.png)
+[![Home](https://github.com/neollob/projecte/blob/master/img/screenshot1.png)](https://github.com/neollob/projecte/blob/master/img/screenshot1.png)
 
 * Login Page
 
-[![login](https://https://neollob.github.io/projecte/img/screenshot2.png)](https://https://neollob.github.io/projecte/img/screenshot2.png)
+[![login](https://neollob.github.io/projecte/img/screenshot2.png)](https://neollob.github.io/projecte/img/screenshot2.png)
 
 * Listado de clientes
 

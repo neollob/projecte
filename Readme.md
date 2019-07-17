@@ -15,46 +15,46 @@ El objetivo de la aplicación es la de poder gestionar vía web pormenores de un
 
 [![Wireframe](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG)](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG)
 
-### Primera iteración
+## Primera iteración
 
 En una primera fase de desarrollo se ha desarrollado el CRUD completo de los clientes 
 	Listado, y detalle de los proveedores 
 	Listado de productos y pedidos a proveedores
 
-* Pagina principal
+### Pagina principal
 
 [![Home](https://github.com/neollob/projecte/blob/master/img/screenshot1.png)](https://github.com/neollob/projecte/blob/master/img/screenshot1.png)
 
-* Login Page
+### Login Page
 
 [![login](https://github.com/neollob/projecte/blob/master/img/screenshot2.png)](https://github.com/neollob/projecte/blob/master/img/screenshot2.png)
 
-* Listado de clientes
+### Listado de clientes
 
 [![Listado de clientes](https://github.com/neollob/projecte/blob/master/img/screenshot3.png)](https://github.com/neollob/projecte/blob/master/img/screenshot3.png)
 
-* Detalle de cliente
+### Detalle de cliente
 
 [![Detalle de cliente](https://github.com/neollob/projecte/blob/master/img/screenshot6.png)](https://github.com/neollob/projecte/blob/master/img/screenshot6.png)
 
-* Edición de cliente
+### Edición de cliente
 
 [![Edición de cliente](https://github.com/neollob/projecte/blob/master/img/screenshot4.png)](https://github.com/neollob/projecte/blob/master/img/screenshot4.png)
 
-* Adición de clientes
+### Adición de clientes
 
 [![Adición de clientes](https://github.com/neollob/projecte/blob/master/img/screenshot5.png)](https://github.com/neollob/projecte/blob/master/img/screenshot5.png)
 
-* Demanda de stock
+### Demanda de stock
 
 [![Demanda de stock](https://github.com/neollob/projecte/blob/master/img/screenshot7.png)](https://github.com/neollob/projecte/blob/master/img/screenshot7.png)
 
-* Barra lateral
+### Barra lateral
 
 [![Demanda de stock](https://github.com/neollob/projecte/blob/master/img/screenshot8.png)](https://github.com/neollob/projecte/blob/master/img/screenshot8.png)
 
 
-### Posteriores iteraciones
+## Posteriores iteraciones
 
 	Completar CRUD, proveedores
 		listados de productos y pedidos por proveedor

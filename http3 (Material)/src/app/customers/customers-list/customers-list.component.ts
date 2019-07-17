@@ -4,6 +4,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { Customer } from 'src/app/shared/interfaces/customer-interface';
 import Swal from 'sweetalert2';
 import { trigger, state, transition, animate, style } from '@angular/animations';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-customers-list',
@@ -24,6 +25,8 @@ export class CustomersListComponent implements OnInit {
   public customers: any = [];
   public data: any;
   dataSource = new MatTableDataSource(this.customers);
+  isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  Loaded=false;
 
   displayedColumns: string[] = ['picture', 'name.last', 'email', 'age', 'edit', 'delete'];
 
@@ -31,9 +34,20 @@ export class CustomersListComponent implements OnInit {
   }
 
   getCustomers() {
-    this.api.getCustomers$().subscribe(arg => {
-      this.customers = arg;
-      this.matTable();
+    this.isLoading$.next(true);
+    this.api.getCustomers$().subscribe({
+      next: arg => {
+        setTimeout(() => {
+        this.customers = arg;
+        this.matTable();
+          // Spinner off
+        this.Loaded = true;
+        this.isLoading$.next(false);
+        }, 3000);
+      },
+      error: err => console.error('Observer got an error: ' + err),
+      complete: () => {
+         console.log('Observer got a complete notification');}
     });
   }
   deleteCustomer(id: string) {

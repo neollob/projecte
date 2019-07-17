@@ -54,9 +54,6 @@ En una primera fase de desarrollo se ha desarrollado el CRUD completo de los cli
 [![Demanda de stock](https://github.com/neollob/projecte/blob/master/img/screenshot8.png)](https://github.com/neollob/projecte/blob/master/img/screenshot8.png)
 
 
-
-
-
 ### Posteriores iteraciones
 
 	Completar CRUD, proveedores

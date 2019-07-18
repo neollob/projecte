@@ -1,9 +1,12 @@
-#picture{
-  border-radius: 50%;
-  height: 120px;
-}
-mat-card-content{
-  mat-icon{
-    margin-right: 0.5rem;
+.customer-detail{
+  margin: 10px;
+  #picture{
+    border-radius: 50%;
+    height: 120px;
+  }
+  mat-card-content{
+    mat-icon{
+      margin-right: 0.5rem;
+    }
   }
 }

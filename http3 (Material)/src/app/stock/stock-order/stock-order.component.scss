@@ -1,23 +1,26 @@
-.green{
-  color:green;
-}
-.spinner-container{
-  position: absolute;
-  height: 80vh;
-  width: 100vw;
-  background-color: #fafafa;
-  z-index: 1;
-}
-.stockList{
-  width: 90vw;
-  .productList{
-    min-height: 2rem;
-    max-height: 60vh;
-    overflow-y: scroll;
+.stock-order{
+  margin: 10px;
+  .green{
+    color:green;
   }
+  .spinner-container{
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+    background-color: #fafafa;
+    z-index: 1;
+  }
+  .stockList{
+    width: 90vw;
+    .productList{
+      min-height: 2rem;
+      max-height: 60vh;
+      overflow-y: scroll;
+    }
+  }
+  .half-width{
+    min-width: 200px;
+    width: 45vw;
+  }
+  .qtyInput{text-align: center;}
 }
-.half-width{
-  min-width: 200px;
-  width: 45vw;
-}
-.qtyInput{text-align: center;}

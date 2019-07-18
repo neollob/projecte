@@ -1,8 +1,10 @@
 
-.full-width {
-  width: 100%;
+.customer-add{
+  margin: 10px;
+  .full-width {
+    width: 100%;
+  }
+  button[mat-raised-button]{
+    margin:0.25rem 0;
+  }
 }
-button[mat-raised-button]{
-  margin:0.25rem 0;
-}
-

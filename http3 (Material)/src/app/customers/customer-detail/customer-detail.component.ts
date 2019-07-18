@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/shared/classes/customer.model';
 
 @Component({
-  selector: 'app-customer-detail',
+  selector: 'customer-detail',
   templateUrl: './customer-detail.component.html',
   styleUrls: ['./customer-detail.component.scss']
 })

@@ -7,4 +7,9 @@ form {
 mat-error,mat-label {
   font-size: small;
 }
+mat-label{
+  >a{margin-left: 5px;
+    color: green;
+  }
+}
 button{width: 100%;}

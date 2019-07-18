@@ -13,12 +13,16 @@
           <input type="password" matInput placeholder="password" [formControl]="registerForm.get('password')">
         </mat-form-field>
       </mat-card-content>
-      <mat-error *ngIf="(email.invalid || password.invalid)&&(email.dirty || email.touched)">
-        Los campos no pueden estar vacíos
+      <mat-error *ngIf="(email.invalid || password.invalid)&&(email.dirty || email.touched)" fxLayoutAlign="center">
+          Fields don't meet the minimum requirements
       </mat-error>
       <mat-card-actions fxLayoutAlign="end">
         <button type="submit" mat-raised-button color="primary">Register</button>
       </mat-card-actions>
+      <mat-label fxLayout="row" fxLayoutAlign="center"> registered?
+          <a routerLink="/users/login"> Log in</a>
+      </mat-label>
+
     </mat-card>
   </form>
 

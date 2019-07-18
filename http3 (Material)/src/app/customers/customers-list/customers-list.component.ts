@@ -46,7 +46,7 @@ export class CustomersListComponent implements OnInit {
       },
       error: err => console.error('Observer got an error: ' + err),
       complete: () => {
-         console.log('Observer got a complete notification');}
+         console.log('Observer got a complete notification'); }
     });
   }
   deleteCustomer(id: string) {

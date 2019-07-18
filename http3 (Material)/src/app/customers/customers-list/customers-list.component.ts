@@ -33,6 +33,7 @@ export class CustomersListComponent implements OnInit {
   }
 
   getCustomers() {
+    // Spinner on
     this.isLoading$.next(true);
     this.api.getCustomers$().subscribe({
       next: arg => {

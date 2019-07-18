@@ -7,6 +7,7 @@ import {
   moveItemInArray,
   transferArrayItem
 } from '@angular/cdk/drag-drop';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -20,13 +21,19 @@ export class StockOrderComponent implements OnInit {
   public order: Product[] = [this.products];
   dataSource = this.products;
   pattern: string;
+  isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   displayedColumns: string[] = ['name', 'value', 'qty'];
   constructor(private api: ApiProductsService) {}
 
   getProducts() {
+    // Spinner on
+    this.isLoading$.next(true);
     this.api.getProducts$().subscribe(arg => {
       this.products = arg;
       this.matTable();
+      // Spinner off
+      this.isLoading$.next(false);
     });
   }
   matTable() {

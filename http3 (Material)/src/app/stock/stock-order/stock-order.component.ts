@@ -17,7 +17,7 @@ export class StockOrderComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   public products: Product = this.api.initProduct();
-  public order: Product[] = [this.api.initProduct()];
+  public order: Product[] = [this.products];
   dataSource = this.products;
   pattern: string;
   displayedColumns: string[] = ['name', 'value', 'qty'];

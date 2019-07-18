@@ -26,7 +26,6 @@ export class CustomersListComponent implements OnInit {
   public data: any;
   dataSource = new MatTableDataSource(this.customers);
   isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  Loaded=false;
 
   displayedColumns: string[] = ['picture', 'name.last', 'email', 'age', 'edit', 'delete'];
 
@@ -37,13 +36,13 @@ export class CustomersListComponent implements OnInit {
     this.isLoading$.next(true);
     this.api.getCustomers$().subscribe({
       next: arg => {
-        setTimeout(() => {
+       // setTimeout(() => {
         this.customers = arg;
         this.matTable();
           // Spinner off
-        this.Loaded = true;
+
         this.isLoading$.next(false);
-        }, 3000);
+       // }, 30000);
       },
       error: err => console.error('Observer got an error: ' + err),
       complete: () => {

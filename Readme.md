@@ -1,8 +1,8 @@
 ﻿# Commercial management (designed by Dani)
 
-Aplicación: `https://neollob.github.io/projecte/index.html`
+Aplicación: https://neollob.github.io/projecte/index.html
 
-Presentación: `https://slides.com/danicifo/deck/live`
+Presentación: https://slides.com/danicifo/deck/live
 
 Aplicación web de gestión comercial para administración de clientes, proveedores y stock de productos.
 

@@ -31,13 +31,13 @@ export class RegisterComponent implements OnInit {
         this.authService.setToken(token);
         // this.router.onSameUrlNavigation = 'reload';
         // this.router.navigate(['/']);
-        this.router.navigate(['/home']);
+        this.router.navigate(['users/login']);
 
 
         this.isError = false;
       },
       error => this.onIsError()
-    );;
+    );
   }
   onIsError(): void {
     this.isError = true;

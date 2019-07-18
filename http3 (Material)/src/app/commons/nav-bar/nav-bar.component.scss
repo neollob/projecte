@@ -17,6 +17,25 @@ mat-toolbar{
   border-radius: 3px;
   #firstBar{
     height: 55px;
+    .log-items{
+      #loginBtn{
+        margin-top: 1rem;
+      }
+      #registerBtn{
+        a{
+          color:#ddd;
+        }
+      }
+      li{
+        line-height: 1;
+      }
+      mat-icon{
+        font-size: 14px;
+      }
+      a{
+        font-size: medium;
+      }
+    }
   }
   #secondBar{
     background-color: #6495ed;
@@ -25,7 +44,6 @@ mat-toolbar{
       font-size:medium;
     }
   }
-  .iconBar{margin-right: 0.5rem;}
 }
 
 @media(max-width: 959px){

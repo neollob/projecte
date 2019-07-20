@@ -6,7 +6,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule, MatButtonModule, MatTabsModule,
   MatListModule, MatInputModule, MatTableModule, MatPaginatorModule,
   MatSortModule, MatProgressSpinnerModule, MatCheckboxModule, MatDividerModule,
-  MatFormFieldModule, MatCardModule, MatProgressBarModule } from '@angular/material';
+  MatFormFieldModule, MatCardModule, MatProgressBarModule, MatExpansionModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -31,7 +31,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatTableModule, MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule, MatProgressBarModule,
-    DragDropModule
+    DragDropModule,
+    MatExpansionModule
   ],
   exports: [
     MatButtonModule,
@@ -51,7 +52,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatTableModule, MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule, MatProgressBarModule,
-    DragDropModule
+    DragDropModule,
+    MatExpansionModule
   ]
 })
 export class MaterialModule { }

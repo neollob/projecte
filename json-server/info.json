@@ -7782,16 +7782,19 @@
     {
       "email": "my@mail.com",
       "password": "$2a$10$SU1P8C/iFUB8v4lXTo2gxuFbHKIrkfn.fUgkp34BWJyAWUUZ7mzny",
+      "name": "",
       "id": 1
     },
     {
       "email": "my2@mail.com",
       "password": "$2a$10$QWAKmhMEi242u/pjtlhZGOYKnnI7MUJxzbKHiS1Kzbtih7BNxb1oK",
+      "name": "",
       "id": 2
     },
     {
       "email": "my3@mail.com",
       "password": "$2a$10$wZ9WSDnksqSYZppYFGhSqOlo.EpEyTnldAu/uMo3Y0vpenc8r1F5m",
+      "name": "",
       "id": 3
     },
     {

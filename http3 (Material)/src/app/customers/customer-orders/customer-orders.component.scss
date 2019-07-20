@@ -1,10 +1,10 @@
-mat-card-header,mat-toolbar{
+mat-card-header,mat-toolbar,#mat-expansion-panel-header-0{
   background-color: #83b9ff;
   color:#ffffff;
 }
   #container{
     max-height: 20rem;
-    overflow: scroll;
+    overflow-y: auto;
   }
   #invoicesItems{
     margin:0 1rem;

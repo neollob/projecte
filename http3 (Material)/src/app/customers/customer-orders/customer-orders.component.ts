@@ -12,6 +12,7 @@ export class AddOrderComponent implements OnInit {
   identifier: any;
   customer: Customer;
   invoices: any;
+  panelOpenState = false;
 
   constructor(public api: ApiService, public route: ActivatedRoute) { }
   getCustomer() {

@@ -13,7 +13,7 @@ El objetivo de la aplicación es la de poder gestionar vía web pormenores de un
 
 ### Wireframe
 
-[![Wireframe](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG)](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG)
+[![Wireframe](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG1)](https://github.com/neollob/projecte/blob/master/img/wireframe.JPG1)
 
 ## Primera iteración
 

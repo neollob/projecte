@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  width: 100%;
+  .mat-list-item {
+    color: #333;
+    padding: 0;
+    ::ng-deep .mat-list-item-content{
+      padding: 8px;
+    }
+    .routeIcon {
+      margin-right: 1rem;
+      color:rebeccapurple;
+    }
+  }
+  .mat-list-item.expanded {
+    background-color: #3f51b51a;
+  }
+  .mat-list-item.active {
+    //background-color: rgba(0, 0, 255, 0.5);
+    border-right: 4px solid #c60000;
+    //color:#eee;
+      color:rgba(51, 51, 51, 0.9);
+      background-color: #3f51b549;
+    &.firstLevel {
+    }
+  }
+  &:hover,
+  &:focus {
+    > .mat-list-item:not(.expanded) {
+      background-color: rgba(0, 0, 255, 0.3);
+    }
+  }
+  ::ng-deep .mat-list-item-content {
+    width: 100%;
+  }
+}
+
+.mat-list-item {
+  padding: 8px 0;
+  display: block;
+  width: auto;
+
+}

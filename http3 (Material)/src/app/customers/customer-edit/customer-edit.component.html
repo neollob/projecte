@@ -1,13 +1,4 @@
 <div class="customer-edit" fxLayout="column">
-<div fxLayout="row">
-    <h4><a routerLink="/home">Home</a></h4>
-    <h4>&nbsp; > &nbsp;</h4>
-    <h4><a routerLink="/customers">Customers</a></h4>
-    <h4>&nbsp; > &nbsp;</h4>
-    <h4><a [routerLink]="['../../customer_detail/',customer.id]">{{customer.name.first}} {{customer.name.last}}</a></h4>
-    <h4>&nbsp; > &nbsp;</h4>
-    <h4>editing</h4>
-</div>
 
 <mat-card fxFlex fxLayout="column">
   <h3>Edit customer</h3>

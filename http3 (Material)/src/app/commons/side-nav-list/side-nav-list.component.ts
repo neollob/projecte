@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/cor
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import navItems, { NavItem } from 'src/app/shared/classes/nav-items';
 
 @Component({
   selector: 'app-side-nav-list',
@@ -12,11 +13,14 @@ export class SideNavListComponent implements OnInit {
   @ViewChild('NavBarComponent', {static: true}) public navbar: NavBarComponent;
   @Output() sidenavClose = new EventEmitter();
   public isLogged = false;
+  public navList: NavItem[];
+
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.onCheckUser();
+    this.navList = navItems;
   }
   public onSidenavClose = () => {
     this.sidenavClose.emit();

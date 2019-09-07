@@ -1,37 +1,19 @@
 {
-
- "name": "e-management-json",
-
- "version": "1.0.0",
-
- "description": "",
-
- "main": "index.js",
-
- "dependencies": {
-
-   "json-server": "^0.15.0",
-
-   "json-server-auth": "^1.2.1"
-
- },
-
- "devDependencies": {
-
-   "json-server-auth": "^1.2.1"
-
- },
-
- "scripts": {
-
-   "test": "echo \"Error: no test specified\" && exit 1",
-
-   "start": "node server.js"
-
- },
-
- "author": "",
-
- "license": "ISC"
-
+  "name": "e-management-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.15.0",
+    "json-server-auth": "^1.2.1"
+  },
+  "devDependencies": {
+    "json-server-auth": "^1.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -27,7 +27,7 @@ const routes: Routes = [
       import('./stock/stock.module').then(mod => mod.StockModule),
     canActivate: [AuthGuard]
   },
-  { path: 'users/login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'users/register', component: RegisterComponent },
   { path: '**', component: NotFoundComponent }
 ];

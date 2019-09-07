@@ -1,13 +1,27 @@
-
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav role="navigation">
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation" mode="over" opened="false">
       <app-side-nav-list (sidenavClose)="sidenav.close()"></app-side-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content fxLayout="column">
       <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
-      <main>
-        <router-outlet></router-outlet>
-      </main>
+      <div id="mainContent" fxLayout="row" fxFlex="grow">
+        <mat-nav-list #sidemenu fxLayout="column" *ngIf="isLogged" fxHide.xs fxFlex="grow">
+          <div id="menuTitle"></div>
+          <app-menu-list-item *ngFor="let item of navList" [item]="item"></app-menu-list-item>
+          <span fxFlex="grow" fxLayout="column-reverse" class="version-info">
+            <small> Current build: {{version.full ? version.full : version}}</small>
+          </span>
+        </mat-nav-list>
+        <main fxFlex>
+          <mat-nav-list fxLayout="row">
+            <app-bread-crumb-item fxLayout="row" *ngFor="let item of navList" [item]="item">
+            </app-bread-crumb-item>
+          </mat-nav-list>
+          <router-outlet></router-outlet>
+        </main>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+
 

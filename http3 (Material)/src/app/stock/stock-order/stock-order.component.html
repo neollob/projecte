@@ -1,12 +1,5 @@
 <div fxLayout="column" class="stock-order">
 
-<div fxLayout="row">
-  <h4><a routerLink="/home">Home</a></h4>
-  <h4>&nbsp; > &nbsp;</h4>
-  <h4><a routerLink="/stock">Stock</a></h4>
-  <h4>&nbsp; > &nbsp;</h4>
-  <h4>ordering</h4>
-</div>
 <!-- Spinner -->
 <div fxLayout fxLayoutAlign="center center" class="spinner-container" *ngIf="isLoading$ | async">
   <mat-spinner></mat-spinner>

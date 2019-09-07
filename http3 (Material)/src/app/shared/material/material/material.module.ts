@@ -6,54 +6,57 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule, MatButtonModule, MatTabsModule,
   MatListModule, MatInputModule, MatTableModule, MatPaginatorModule,
   MatSortModule, MatProgressSpinnerModule, MatCheckboxModule, MatDividerModule,
-  MatFormFieldModule, MatCardModule, MatProgressBarModule, MatExpansionModule } from '@angular/material';
+  MatFormFieldModule, MatCardModule, MatProgressBarModule, MatExpansionModule,
+  MatDialogModule,
+  MatRippleModule,
+  MatSnackBarModule,
+  MatDatepickerModule, MatNativeDateModule,
+  MatRadioModule, MatSlideToggleModule, MatSelectModule, MatTooltipModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+const MaterialComponents = [
+  DragDropModule,
+  FlexLayoutModule,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSidenavModule,
+  MatSortModule,
+  MatSelectModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
+];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatCardModule,
-    MatInputModule,
-    MatToolbarModule,
-    FlexLayoutModule,
-    MatTabsModule,
-    MatTableModule, MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule, MatProgressBarModule,
-    DragDropModule,
-    MatExpansionModule
+    MaterialComponents
   ],
   exports: [
-    MatButtonModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatMenuModule,
-    MatCardModule,
-    MatInputModule,
-    MatToolbarModule,
-    FlexLayoutModule,
-    MatTabsModule,
-    MatTableModule, MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule, MatProgressBarModule,
-    DragDropModule,
-    MatExpansionModule
+    MaterialComponents
   ]
 })
 export class MaterialModule { }

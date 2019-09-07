@@ -14,43 +14,56 @@ a:hover, a:active{
 }
 
 mat-toolbar{
-  border-radius: 3px;
+  //border-radius: 3px;
+  min-height: 55px;
   #firstBar{
     height: 55px;
+    .material-icons.md-36 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
     .log-items{
       #loginBtn{
-        margin-top: 1rem;
+        margin-top: .5rem;
       }
       #registerBtn{
         a{
           color:#ddd;
+          &:hover{
+            color:lightgray
+          }
         }
       }
       li{
         line-height: 1;
       }
       mat-icon{
-        font-size: 14px;
+       // font-size: 14px;
+       &.logged-icon{
+         color:#00b900;
+       }
+       &.logout-icon{
+         color:#f37c5d;
+       }
       }
       a{
         font-size: medium;
       }
     }
   }
-  #secondBar{
-    background-color: #6495ed;
-    height: 40px;
-    span{
-      font-size:medium;
-    }
-  }
+}
+.mat-nav-list{
+  position: absolute;
+  padding: 0;
+
+
 }
 
 @media(max-width: 959px){
   mat-toolbar{
-      border-radius: 0px;
-      #secondBar{
-        display: none;
-      }
+    border-radius: 0px;
   }
 }
+
+

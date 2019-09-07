@@ -1,14 +1,12 @@
 [
-  '{{repeat(145, 7)}}',
+  '{{repeat(1, 7)}}',
   {
     todoid: '{{guid()}}',
+    todotaskid: '{{guid()}}',
     id: '{{index()}}',
     task: '{{lorem(integer(1,4), "words")}}',
-    type: '{{integer(1, 10)}}',
-    section: '{{integer(0, 5)}}',
     registerdate: '{{date(new Date(), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
     state: '{{integer(0, 2)}}',
-    description: '{{lorem(integer(1,4), "words")}}',
     disabled: 'false'
   }
 ]   

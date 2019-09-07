@@ -5,6 +5,7 @@ import { NotFoundComponent } from './commons/not-found/not-found.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { TodoComponent } from './todo/todo/todo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,6 +26,10 @@ const routes: Routes = [
     path: 'stock',
     loadChildren: () =>
       import('./stock/stock.module').then(mod => mod.StockModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'todoes', component: TodoComponent,
     canActivate: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },

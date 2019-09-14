@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { MatSnackBar } from '@angular/material';
 import Swal from 'sweetalert2';
 import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
+import { BehaviorSubject } from 'rxjs';
+import { ApiTodotasksService } from 'src/app/shared/services/api-todotasks.service';
 
 @Component({
   selector: 'app-todo',
@@ -12,7 +14,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag, CdkDropList }
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
-  // isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public apiUrl = environment.API_URL;
   public todo: Todo = this.apiTodo.initTodo();
   public position: number;
@@ -23,11 +25,11 @@ export class TodoComponent implements OnInit {
   expandedElement: Todo | null;
   dragDisable = false;
 
-  constructor(public apiTodo: ApiTodoService, private _snackBar: MatSnackBar) { }
+  constructor(public apiTodo: ApiTodoService, public apiTodoTask: ApiTodotasksService, private _snackBar: MatSnackBar) { }
 
   getTodoes() {
     // Spinner on
-    // this.isLoading$.next(true);
+    this.isLoading$.next(true);
     this.apiTodo.getTodoes$().subscribe({
       next: arg => {
         this.todoesRows = arg;
@@ -42,6 +44,7 @@ export class TodoComponent implements OnInit {
               break;
             case '2':
               this.doneList.push(e);
+              //this.getTodotasks(e.todoid, e);
               break;
             default:
               break;
@@ -56,7 +59,7 @@ export class TodoComponent implements OnInit {
            */
         });
         // Spinner off
-        // this.isLoading$.next(false);
+        this.isLoading$.next(false);
       },
       error: err => console.error('Observer got an error: ' + err),
       complete: () => {
@@ -64,6 +67,24 @@ export class TodoComponent implements OnInit {
       }
     });
   }
+/**  getTodotasks(todoid, todo) {
+    // Spinner on
+    // this.isLoading$.next(true);
+    this.apiTodoTask.getTodotasks$(todoid).subscribe({
+      next: arg => {
+        const todotaskssRows: any  = arg;
+        console.log(todotaskssRows);
+        todo.tasks = todotaskssRows.rows;
+        console.log(todo.tasks);
+        // Spinner off
+        // this.isLoading$.next(false);
+      },
+      error: err => console.error('Observer got an error: ' + err),
+      complete: () => {
+        // console.log('Observer got a complete notification');
+      }
+    });
+  } */
   insertUpdate() {
     if (this.todo.task !== '') {
       if (this.todo.id !== null){
@@ -97,7 +118,7 @@ export class TodoComponent implements OnInit {
         this.apiTodo.deleteTodo$(item.id).subscribe(res => {
           this.openSnackBar(
             'Deleted!, Your TO-DO has been deleted.',
-            'success'
+            'deleted'
           );/*
           Swal.fire(
             'Deleted!',
@@ -109,11 +130,14 @@ export class TodoComponent implements OnInit {
         // For more information about handling dismissals please visit
         // https://sweetalert2.github.io/#handling-dismissals
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelled',
-          'Your TO-DO is safe :)',
-          'error'
-        );
+        Swal.fire({
+          // position: 'top-end',
+          type: 'error',
+          title: 'Cancelled',
+          text: 'Your TO-DO is safe :)',
+          showConfirmButton: false,
+          timer: 1500
+        });
       }
     });
   }

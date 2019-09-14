@@ -7849,16 +7849,24 @@
       "type": 10,
       "section": 3,
       "registerdate": "2019-09-07T12:41:02 -02:00",
-      "state": 1,
+      "state": "1",
       "description": "tempor non do Lorem",
       "disabled": true,
       "todotask": [
+        {
+          "todotaskid": "12db6738-734a-4387-bca5-9933d0de4364",
+          "id": 2,
+          "task": "task3",
+          "registerdate": "2019-09-14T10:45:18.292Z",
+          "state": "0",
+          "disabled": false
+        },
         {
           "todotaskid": "2ac6ba77-796a-434c-a826-194a0ea4be0d",
           "id": 2,
           "task": "task 2",
           "registerdate": "2019-09-07T17:58:35.021Z",
-          "state": "0",
+          "state": "1",
           "disabled": false
         },
         {
@@ -7890,10 +7898,43 @@
       "type": 3,
       "section": 2,
       "registerdate": "2019-09-07T12:41:02 -02:00",
-      "state": 2,
+      "state": "2",
       "description": "dolore commodo",
       "disabled": false,
-      "todotask": []
+      "todotask": [
+        {
+          "todotaskid": "e0555e06-addf-4b4a-89e4-fde220bbe0eb",
+          "id": 4,
+          "task": "sunt",
+          "registerdate": "2019-09-14T10:48:14.309Z",
+          "state": "1",
+          "disabled": false
+        },
+        {
+          "todotaskid": "be6ceedc-a11d-4935-bb1c-b55e8dcf7ba6",
+          "id": 4,
+          "task": "aute",
+          "registerdate": "2019-09-14T10:48:10.146Z",
+          "state": "1",
+          "disabled": false
+        },
+        {
+          "todotaskid": "d4d744ab-1e62-4142-b099-f43f6fd33497",
+          "id": 4,
+          "task": "sit",
+          "registerdate": "2019-09-14T10:47:15.871Z",
+          "state": "1",
+          "disabled": false
+        },
+        {
+          "todotaskid": "55fef886-f04f-4b69-89ba-ab7aaa7dd147",
+          "id": 4,
+          "task": "laborum",
+          "registerdate": "2019-09-14T10:39:30.295Z",
+          "state": "1",
+          "disabled": false
+        }
+      ]
     },
     {
       "id": 5,
@@ -7939,10 +7980,27 @@
       "type": 9,
       "section": 3,
       "registerdate": "2019-09-07T12:41:02 -02:00",
-      "state": 1,
+      "state": "2",
       "description": "reprehenderit eu et",
       "disabled": false,
-      "todotask": []
+      "todotask": [
+        {
+          "todotaskid": "6b520a91-ead7-4fd4-81fd-12530c215bbd",
+          "id": 6,
+          "task": "Cupidatat velit esse labore",
+          "registerdate": "2019-09-14T10:21:03.252Z",
+          "state": "1",
+          "disabled": false
+        },
+        {
+          "todotaskid": "46ecd21a-208b-47bf-be9b-890147a0c9e9",
+          "id": 6,
+          "task": "ullamco nostrud",
+          "registerdate": "2019-09-14T10:18:28.287Z",
+          "state": "1",
+          "disabled": false
+        }
+      ]
     },
     {
       "id": 7,
@@ -7951,7 +8009,7 @@
       "type": 4,
       "section": 2,
       "registerdate": "2019-09-07T12:41:02 -02:00",
-      "state": 2,
+      "state": "1",
       "description": "culpa",
       "disabled": false,
       "todotask": []

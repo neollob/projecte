@@ -4,7 +4,7 @@
     </mat-sidenav>
     <mat-sidenav-content fxLayout="column">
       <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
-      <div id="mainContent" fxLayout="row" fxFlex="grow">
+      <div id="mainContent" fxLayout="row" fxFlex="100">
         <mat-nav-list #sidemenu fxLayout="column" *ngIf="isLogged" fxHide.xs fxFlex="grow">
           <div id="menuTitle"></div>
           <app-menu-list-item *ngFor="let item of navList" [item]="item"></app-menu-list-item>
@@ -12,7 +12,7 @@
             <small> Current build: {{version.full ? version.full : version}}</small>
           </span>
         </mat-nav-list>
-        <main fxFlex>
+        <main fxFlex="100">
           <mat-nav-list fxLayout="row">
             <app-bread-crumb-item fxLayout="row" *ngFor="let item of navList" [item]="item">
             </app-bread-crumb-item>
